@@ -1,0 +1,39 @@
+footer{
+    background-position: center;
+    background-size: 200px;
+    background-repeat: no-repeat;
+    color:rgb(2, 2, 54);
+    font-family: 'Itim', cursive;
+} 
+footer i{
+    font-size:2em;
+    padding:10px;
+}
+footer p{
+    font-family: 'Rancho', cursive;
+    font-size:1.3em;
+    letter-spacing: 0.009ch;
+}
+footer .fab{
+    transition:0.35s;
+}
+footer .fa-twitter:hover{
+    color:#55b1f8;
+
+}
+footer .fa-facebook:hover{
+    color:#3b5998;
+
+}
+footer .fa-instagram:hover{
+    color:rgb(216, 13, 91);
+
+}
+footer .fa-google-plus-g:hover{
+    color:#c43926;
+
+}
+footer .fa-linkedin:hover{
+    color:#2c9dda;
+
+}

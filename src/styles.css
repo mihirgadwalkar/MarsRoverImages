@@ -1,1 +1,6 @@
-/* You can add global styles to this file, and also import other style files */
+#bg{
+    background-image:url("https://images.wallpaperscraft.com/image/milky_way_starry_sky_galaxy_119519_1600x1200.jpg") ;
+    background-size: 100% ;
+    background-attachment: scroll;
+    font-family: 'Assistant', sans-serif;
+}
