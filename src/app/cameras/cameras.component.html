@@ -1,0 +1,11 @@
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 text-dark">
+    <div class="col" *ngFor="let cameras of camlist.cameras">
+        <div class="card">
+            <p>{{cameras.id}}</p>
+            <p>{{cameras.name}}</p>
+            <p>{{cameras.rover_id}}</p>
+            <p>{{cameras.full_name}}</p>
+            <button class="btn btn-warning d-block mx-auto" (click)="getDetailedCamerasData(cameras.id)"> Get Details </button>
+        </div>
+    </div>
+</div>

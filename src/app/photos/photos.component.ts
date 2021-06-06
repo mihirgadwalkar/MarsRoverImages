@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Data }  from '../models/data.model';
 import { ConsumeService } from '../consume.service';
 import { Subscription } from 'rxjs';
@@ -12,23 +12,25 @@ import { Subscription } from 'rxjs';
 export class PhotosComponent implements OnInit,OnDestroy {
 
   mySubscription:Subscription;
-  photos;
-constructor(private fsObj:ConsumeService,private router:Router) { }
-ngOnInit(): void {
-    this.mySubscription= this.fsObj.getData().subscribe(
-      userData=>{
-        this.photos=userData;
-        console.log(this.photos)
+  imglist:any;
+  constructor(private fsObj:ConsumeService,private routeData:Router,private fullData:ActivatedRoute) { }
+  ngOnInit(): void {
+    let id=this.fullData.snapshot.params.id;
+    console.log(id)
+    this.mySubscription= this.fsObj.getRoversData(id).subscribe(
+      photosData=>{
+        this.imglist=photosData;
+        console.log(this.imglist)
        },
       err=>{
-        console.log("err in getting data",err)
+        console.error("Error in getting data",err)
       }
-
-    )
+    ) 
   }
-  onSelectId(id){
-    console.log(id)
-    this.router.navigateByUrl('photos/'+id)
+
+  getDetailedPhotosData(id){
+    this.routeData.navigateByUrl('photos-details/'+id)
+    this.fsObj.setImgdata(id,this.imglist.photosData)
   }
 
   ngOnDestroy(){

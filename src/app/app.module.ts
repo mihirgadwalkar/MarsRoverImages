@@ -11,6 +11,7 @@ import { PhotosComponent } from './photos/photos.component';
 import { RoversComponent } from './rovers/rovers.component';
 import { RoverdetailsComponent } from './roverdetails/roverdetails.component';
 import { PhotosdetailsComponent } from './photosdetails/photosdetails.component';
+import { CamerasComponent } from './cameras/cameras.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { PhotosdetailsComponent } from './photosdetails/photosdetails.component'
     RoversComponent,
     RoverdetailsComponent,
     PhotosdetailsComponent,
+    CamerasComponent,
     
   
   ],

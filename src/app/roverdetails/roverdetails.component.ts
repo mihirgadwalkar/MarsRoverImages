@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Data } from '@angular/router';
+import { ActivatedRoute, Data, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ConsumeService } from '../consume.service';
 
 @Component({
@@ -9,19 +10,15 @@ import { ConsumeService } from '../consume.service';
 })
 export class RoverdetailsComponent implements OnInit {
 
-  dataObj:Data;
-  constructor(private ar:ActivatedRoute,private fs:ConsumeService) { }
+  camreq:any;
+  dataObj:any;
+  display:any;
+  constructor(private ar:ActivatedRoute,private fsObj:ConsumeService) { }
 
-  ngOnInit(): void {
-    let id=this.ar.snapshot.params.id;
-    this.fs.getRoverDataById(id).subscribe(
-      obj=>{
-        this.dataObj=obj;
-      },
-      err=>{
-        console.log("err in reading data",err)
-      }
-    )
+   ngOnInit(): void {
+    this.camreq=this.fsObj.getCamdata()
+    this.dataObj=this.fsObj.getid()
+    this.display=this.camreq[this.dataObj-1]
   }
-
+  
 }

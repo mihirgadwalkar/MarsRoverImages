@@ -7,16 +7,19 @@ import { ContactusComponent } from './contactus/contactus.component'
 import { RoversComponent } from './rovers/rovers.component';
 import { PhotosdetailsComponent } from './photosdetails/photosdetails.component';
 import { RoverdetailsComponent } from './roverdetails/roverdetails.component';
+import { CamerasComponent } from './cameras/cameras.component';
 
 const routes: Routes = [
-  { path:'home',component:HomeComponent},
+  { path:'home',component:HomeComponent },
   { path:'about',component:AboutComponent},
-  { path:'photos',component:PhotosComponent},
-  { path:'photos/:id',component:PhotosdetailsComponent},
-  { path:'contactus',component:ContactusComponent},
   { path:'rovers',component:RoversComponent},
-  { path:'rovers/:id',component:RoverdetailsComponent},
-  { path:'', redirectTo:'/photos',pathMatch:'full'}
+  //{ path:'rovers-details/:id',component:RoverdetailsComponent},
+  
+  { path:'cameras/:id',component:CamerasComponent},
+  { path:'photos/:id',component:PhotosComponent},
+  { path:'photos-details/:id',component:PhotosdetailsComponent},
+  { path:'contactus',component:ContactusComponent},
+  { path:'', redirectTo:'/about',pathMatch:'full'}
 ];
 
 @NgModule({

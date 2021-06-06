@@ -15,14 +15,17 @@ export class PhotosdetailsComponent implements OnInit {
 
   ngOnInit(): void {
     let id=this.ar.snapshot.params.id;
-    this.fs.getDataById(id).subscribe(
+    let name=this.ar.snapshot.params.name;
+    console.log(id,name);
+    /* this.fs.getPhotosData(id,name).subscribe(
       obj=>{
         this.dataObj=obj;
+        console.log(this.dataObj)
       },
       err=>{
         console.log("err in reading data",err)
       }
-    )
+    ) */
   }
 
 }

@@ -7,20 +7,39 @@ import { Data } from '../app/models/data.model'
   providedIn: 'root'
 })
 export class ConsumeService {
+  id:any;
+  camdata:any;
+  imgdata:any;
 
-  constructor(private hc:HttpClient) { }
+  constructor(private hcObj:HttpClient) { }
   
-  getData():Observable<Data[]>{
-    return this.hc.get<Data[]>('http://localhost:3000/photos')
+  getData():Observable<any>{
+    return this.hcObj.get('http://localhost:3000/rovers/')
   }
-  getDataById(id):Observable<Data>{
-      return this.hc.get<Data>('http://localhost:3000/photos/'+id)
+
+  getRoversData(id):Observable<any>{
+      return this.hcObj.get('http://localhost:3000/rovers/'+id)
   }
    
-  getRoverData():Observable<any>{
-    return this.hc.get<any>('http://localhost:3000/rovers')
+  setCamdata(id,probj){
+    this.camdata=probj
+    this.id=id
   }
-  getRoverDataById(id):Observable<any>{
-    return this.hc.get<any>('http://localhost:3000/rovers/'+id)
-}
+
+  setImgdata(id,probj){
+    this.imgdata=probj
+    this.id=id
+  }
+
+  getCamdata(){
+    return this.camdata
+  }
+
+  getImgdata(){
+    return this.imgdata
+  }
+
+  getid(){
+    return this.id
+  }
 }

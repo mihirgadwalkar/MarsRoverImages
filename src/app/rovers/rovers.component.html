@@ -1,18 +1,45 @@
-<div class="bg-dark">
-    <table class="table text-info text-center">
+<!-- <div class="bg-dark m-5">
+    <table class="table text-info text-center" *ngFor="let data of camlist.data">
         <thead>
             <tr>
-                <th>NAME</th>
                 <th>ID</th>
+                <th>NAME</th>
+                <th>ROVER ID</th>
+                <th>FULL NAME</th>
             </tr>
         </thead>
     
         <tbody>
-            <tr *ngFor="let dataObj of rovers">
-                <td><h3 class="text-white">{{dataObj.name}}</h3></td>
+            <tr>
                 <td>
-                   <button class="btn btn-sm btn-danger"  (click)="onSelectId(dataObj.id)">{{dataObj.id}}</button></td>
-                </tr>
+                    <h3 class="text-white">{{cameras.id}}</h3>
+                </td>
+                <td>
+                    <h3 class="text-white">{{cameras.name}}</h3>
+                </td>
+                <td>
+                    <h3 class="text-white">{{cameras.rover_id}}</h3>
+                </td>
+                <td>
+                    <h3 class="text-white">{{cameras.full_name}}</h3>
+                </td>
+            </tr>
         </tbody>
     </table>
-  </div>
+  </div> -->
+
+<div class="container">
+    <div class="row row-cols-sm-2 row-cols-1">
+        <div class="col" *ngFor="let obj of rovers">
+          <div class="card bg-dark text-white m-5">
+            <h3>{{obj.name}}</h3>
+            <button class="btn btn-warning m-3 d-block mx-auto" (click)="getCameraFullData(obj.id)">
+                Click here to get Camera Details!!!
+            </button>
+            <button class="btn btn-warning m-3 d-block mx-auto" (click)="getPhotosFullData(obj.id)">
+                Click here to get Photo Details!!!
+            </button>
+          </div>
+        </div>
+    </div>
+</div>
