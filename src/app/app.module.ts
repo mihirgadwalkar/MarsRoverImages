@@ -9,7 +9,6 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { PhotosComponent } from './photos/photos.component';
 import { RoversComponent } from './rovers/rovers.component';
-import { RoverdetailsComponent } from './roverdetails/roverdetails.component';
 import { PhotosdetailsComponent } from './photosdetails/photosdetails.component';
 import { CamerasComponent } from './cameras/cameras.component';
 
@@ -22,7 +21,6 @@ import { CamerasComponent } from './cameras/cameras.component';
     AboutComponent,
     PhotosComponent,
     RoversComponent,
-    RoverdetailsComponent,
     PhotosdetailsComponent,
     CamerasComponent,
     

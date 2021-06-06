@@ -10,22 +10,17 @@ import { ConsumeService } from '../consume.service';
 })
 export class PhotosdetailsComponent implements OnInit {
 
-  dataObj:Data;
-  constructor(private ar:ActivatedRoute,private fs:ConsumeService) { }
+  req:any
+  objid:any
+  display:any
+  constructor(private dsObj:ConsumeService) { }
 
-  ngOnInit(): void {
-    let id=this.ar.snapshot.params.id;
-    let name=this.ar.snapshot.params.name;
-    console.log(id,name);
-    /* this.fs.getPhotosData(id,name).subscribe(
-      obj=>{
-        this.dataObj=obj;
-        console.log(this.dataObj)
-      },
-      err=>{
-        console.log("err in reading data",err)
-      }
-    ) */
+  ngOnInit() {
+  
+    this.req=this.dsObj.getImgdata()
+    this.objid=this.dsObj.getid()
+    this.display=this.req[this.objid-1]
+    console.log(this.display);
   }
-
+  
 }
