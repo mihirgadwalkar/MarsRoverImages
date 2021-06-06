@@ -21,11 +21,11 @@
 
  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 text-dark">
     <div class="col" *ngFor="let photos of imglist.photos">
-        <div class="card">
-            <img src="{{photos.img_src}}" alt="...">
-            <p>{{photos.id}}</p>
-            <p>{{photos.sol}}</p>
-            <p>{{photos.earth_date}}</p>
+        <div class="card text-center p-3 m-3">
+            <img src="{{photos.img_src}}" class="card-img-top w-100" alt="...">
+            <h5 class="fw-bold">PHOTO ID : {{photos.id}}</h5>
+            <h5 class="fw-bold">SOL : {{photos.sol}}</h5>
+            <h5 class="fw-bold">EARTH DATE : {{photos.earth_date}}</h5>
             <button class="btn btn-warning d-block mx-auto" (click)="getDetailedPhotosData(photos.id)"> Get Photo Camera Details!!</button>
         </div>
     </div>

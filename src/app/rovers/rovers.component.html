@@ -32,12 +32,12 @@
     <div class="row row-cols-sm-2 row-cols-1">
         <div class="col" *ngFor="let obj of rovers">
           <div class="card bg-dark text-white m-5">
-            <h3>{{obj.name}}</h3>
-            <button class="btn btn-warning m-3 d-block mx-auto" (click)="getCameraFullData(obj.id)">
-                Click here to get Camera Details!!!
+            <h3 class="text-center">{{obj.name}} <span>- {{obj.id}}</span></h3>
+            <button class="btn btn-warning m-3 d-block mx-auto fw-bold" (click)="getCameraFullData(obj.id)">
+                Click here to get Rover Cameras
             </button>
-            <button class="btn btn-warning m-3 d-block mx-auto" (click)="getPhotosFullData(obj.id)">
-                Click here to get Photo Details!!!
+            <button class="btn btn-warning m-3 d-block mx-auto fw-bold" (click)="getPhotosFullData(obj.id)">
+                Click here to get Rover Photos
             </button>
           </div>
         </div>
