@@ -1,18 +1,12 @@
 .wrapper {
     text-align: center;
 }
-
-.button {
-    position: absolute;
-    top: 33%;
-    left: 42%;
-    height: 100px;
-    width: 250px;
+.card{
+    border: black;
 }
 .btn{
     background-color: #ff5349;
     color: whitesmoke;
-    border-radius: 0px;
+    border-radius: 4px;
     box-shadow: none;
-    font-weight: bolder;
 }
