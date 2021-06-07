@@ -5,7 +5,6 @@ import { AboutComponent } from './about/about.component'
 import { PhotosComponent } from './photos/photos.component'
 import { ContactusComponent } from './contactus/contactus.component'
 import { RoversComponent } from './rovers/rovers.component';
-import { PhotosdetailsComponent } from './photosdetails/photosdetails.component';
 import { CamerasComponent } from './cameras/cameras.component';
 
 const routes: Routes = [
@@ -14,7 +13,6 @@ const routes: Routes = [
   { path:'rovers',component:RoversComponent},
   { path:'cameras/:id',component:CamerasComponent},
   { path:'photos/:id',component:PhotosComponent},
-  { path:'photos-details/:id',component:PhotosdetailsComponent},
   { path:'contactus',component:ContactusComponent},
   { path:'', redirectTo:'/about',pathMatch:'full'}
 ];

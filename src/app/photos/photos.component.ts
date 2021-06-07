@@ -28,11 +28,6 @@ export class PhotosComponent implements OnInit,OnDestroy {
     ) 
   }
 
-  getDetailedPhotosData(id){
-    this.routeData.navigateByUrl('photos-details/' + id)
-    this.fsObj.setImgdata(id,this.imglist.photosData)
-  }
-
   ngOnDestroy(){
     this.mySubscription.unsubscribe();
   }
