@@ -13,17 +13,18 @@ export class PhotosComponent implements OnInit,OnDestroy {
 
   mySubscription:Subscription;
   imglist:any;
+  //searchValue:any;
   constructor(private fsObj:ConsumeService,private routeData:Router,private fullData:ActivatedRoute) { }
   ngOnInit(): void {
     let id=this.fullData.snapshot.params.id;
-    console.log(id)
+    //console.log(id)
     this.mySubscription= this.fsObj.getRoversData(id).subscribe(
       photosData=>{
         this.imglist=photosData;
-        console.log(this.imglist)
+        //console.log(this.imglist)
        },
       err=>{
-        console.error("Error in getting data",err)
+        console.error("Error in getting Photos Data",err)
       }
     ) 
   }

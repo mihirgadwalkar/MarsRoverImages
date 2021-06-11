@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ConsumeService } from '../consume.service';
 
 @Component({
@@ -7,18 +8,20 @@ import { ConsumeService } from '../consume.service';
   templateUrl: './rovers.component.html',
   styleUrls: ['./rovers.component.css']
 })
-export class RoversComponent implements OnInit {
+export class RoversComponent implements OnInit, OnDestroy {
 
+  mySubscription:Subscription;
   rovers:any;
   constructor(private dataObj:ConsumeService,private routeData:Router) { }
 
   ngOnInit(): void {
-    this.dataObj.getData().subscribe(
+    this.mySubscription=this.dataObj.getData().subscribe(
       data=>{
-        this.rovers=data
+        this.rovers=data;
+        //console.log(this.rovers)
       },
       err=>{
-        console.error("Error in getting data",err)
+        console.error("Error in getting Rovers Data",err)
       }
     )
   }
@@ -29,5 +32,9 @@ export class RoversComponent implements OnInit {
 
   getPhotosFullData(id){
     this.routeData.navigateByUrl('photos/'+id)
+  }
+
+  ngOnDestroy(){
+    this.mySubscription.unsubscribe();
   }
 }

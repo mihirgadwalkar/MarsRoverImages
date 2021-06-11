@@ -10,6 +10,8 @@ import { AboutComponent } from './about/about.component';
 import { PhotosComponent } from './photos/photos.component';
 import { RoversComponent } from './rovers/rovers.component';
 import { CamerasComponent } from './cameras/cameras.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchfilterPipe } from './searchfilter.pipe';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,16 @@ import { CamerasComponent } from './cameras/cameras.component';
     PhotosComponent,
     RoversComponent,
     CamerasComponent,
+    SearchfilterPipe,
     
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

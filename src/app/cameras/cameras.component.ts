@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ConsumeService } from '../consume.service';
 
 @Component({
@@ -7,23 +8,23 @@ import { ConsumeService } from '../consume.service';
   templateUrl: './cameras.component.html',
   styleUrls: ['./cameras.component.css']
 })
-export class CamerasComponent implements OnInit {
+export class CamerasComponent implements OnInit, OnDestroy {
 
   constructor(private fsObj:ConsumeService,private routeData:Router,private fullData:ActivatedRoute) { }
-
+  mySubscription:Subscription;
   camlist:any;
 
   ngOnInit(): void {
 
     let id=this.fullData.snapshot.params.id
 
-    this.fsObj.getRoversData(id).subscribe(
+    this.mySubscription= this.fsObj.getRoversData(id).subscribe(
       camerasData=>{
         this.camlist=camerasData;
-        console.log(this.camlist)
+        //console.log(this.camlist)
        },
       err=>{
-        console.error("Error in getting data",err)
+        console.error("Error in getting Camera Data",err)
       }
     )
   }
@@ -31,6 +32,10 @@ export class CamerasComponent implements OnInit {
   getDetailedCamerasData(id){
     this.routeData.navigateByUrl('camera-details/'+id)
     this.fsObj.setCamdata(id,this.camlist.camerasData)
+  }
+
+  ngOnDestroy(){
+    this.mySubscription.unsubscribe();
   }
 
 }
