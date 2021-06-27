@@ -48,3 +48,77 @@
     border: none;
     cursor: pointer;
 }
+.contact-form{
+    background: #fff;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    width: 70%;
+}
+
+.contact-image{
+    text-align: center;
+}
+.contact-image img{
+    border-radius: 6rem;
+    width: 11%;
+    margin-top: -3%;
+    transform: rotate(36deg);
+}
+
+.btn {
+    position: relative;
+    background: #0345fc;
+    border: none;
+    font-size: 30px;
+    color: black;
+    padding: 100%;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    font-family:'Staatliches', cursive; ;
+    overflow: hidden;
+    cursor: pointer;
+}
+  
+.btn:after {
+    content: "";
+    background: #E7625F;
+    display: block;
+    position: absolute;
+    padding-top: 150%;
+    padding-left: 150%;
+    padding-bottom: 150%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+  
+.btn:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+.input-icons i {
+    position: absolute;
+}
+            
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.icon {
+    padding: 20px;
+    color: black;
+    min-width: 50px;
+    text-align: center;
+}
+            
+.input-field {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}

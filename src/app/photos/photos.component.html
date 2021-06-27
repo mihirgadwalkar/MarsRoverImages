@@ -1,12 +1,9 @@
-<!-- <div class="form-group row">
-  <label for="search" class="col-sm-2 col-form-label text-white" style="text-align:right;">Search</label>
-  <div class="col-sm-6">
-    <input type="text" [(ngModel)]="searchValue" class="form-control" id="search" />
-  </div>
-</div> -->
+
+  <input type="text" name="camname" [(ngModel)]="searchTerm" class="form-control mt-2" placeholder="Search by Camera Name" />
+ 
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 text-dark">
-    <div class="col" *ngFor="let photos of imglist.photos;let ind=index"> 
-      <!-- | searchfilter:searchValue -->
+    <div class="col" *ngFor="let photos of imglist.photos | searchfilter:searchTerm | paginate: { itemsPerPage: 30, currentPage: p };let ind=index"> 
+      <!--  -->
         <div class="card text-center p-3 m-3">
             <img src="{{photos.img_src}}" class="card-img-top w-100" alt="...">
             <h5 class="fw-bold">PHOTO ID : {{photos.id}}</h5>
@@ -33,3 +30,6 @@
         </div>
     </div>
  </div>
+<div class="text-center bg-white">
+  <pagination-controls (pageChange)="p=$event"></pagination-controls>
+</div>

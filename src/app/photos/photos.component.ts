@@ -13,7 +13,8 @@ export class PhotosComponent implements OnInit,OnDestroy {
 
   mySubscription:Subscription;
   imglist:any;
-  //searchValue:any;
+  p=1;
+  searchTerm:any;
   constructor(private fsObj:ConsumeService,private routeData:Router,private fullData:ActivatedRoute) { }
   ngOnInit(): void {
     let id=this.fullData.snapshot.params.id;
