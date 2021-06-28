@@ -13,6 +13,7 @@ import { CamerasComponent } from './cameras/cameras.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchfilterPipe } from './searchfilter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

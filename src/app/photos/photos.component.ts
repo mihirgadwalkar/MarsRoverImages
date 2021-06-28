@@ -15,6 +15,7 @@ export class PhotosComponent implements OnInit,OnDestroy {
   imglist:any;
   p=1;
   searchTerm:any;
+  term:any;
   constructor(private fsObj:ConsumeService,private routeData:Router,private fullData:ActivatedRoute) { }
   ngOnInit(): void {
     let id=this.fullData.snapshot.params.id;
