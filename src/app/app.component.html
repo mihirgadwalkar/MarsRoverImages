@@ -1,5 +1,5 @@
 <!-- create navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><img src="../assets/logo.png" width="180px" height="50px"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -29,7 +29,23 @@
   
     </div>
   </div>
-</nav>
+</nav> -->
+
+<div class="togglearea">
+  <label for="toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+</div>
+
+<input type="checkbox" id="toggle">
+<div class="navbar">
+  <a class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
+  <a class="nav-link" routerLink="about" routerLinkActive="active">About</a>
+  <a class="nav-link " routerLink="rovers" routerLinkActive="active">Rovers</a>
+  <a class="nav-link " routerLink="contactus" routerLinkActive="active">Contact Us</a>
+</div>
 
 <div class="container">
   <router-outlet></router-outlet>

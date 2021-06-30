@@ -6,6 +6,7 @@ import { PhotosComponent } from './photos/photos.component'
 import { ContactusComponent } from './contactus/contactus.component'
 import { RoversComponent } from './rovers/rovers.component';
 import { CamerasComponent } from './cameras/cameras.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   { path:'home',component:HomeComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path:'cameras/:id',component:CamerasComponent},
   { path:'photos/:id',component:PhotosComponent},
   { path:'contactus',component:ContactusComponent},
-  { path:'', redirectTo:'/about',pathMatch:'full'}
+  { path:'', redirectTo:'/about',pathMatch:'full'},
+  { path:'**',component:PagenotfoundComponent}
 ];
 
 @NgModule({
