@@ -1,0 +1,53 @@
+<!---<div class="bg-dark">
+    <table class="table text-info text-center">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>SOL</th>
+                <th>CAMERA NAME</th>
+                <th>ROVER ID</th>
+                <th>ROVER NAME</th>
+                <th>EARTH DATE</th>
+                <th></th>
+            </tr>
+        </thead>
+    
+        <tbody>
+            <tr *ngFor="let pic of adminPics">
+                <td>
+               <button class="btn btn-sm btn-danger"> {{pic.id}}</button></td>
+               <td>{{pic.sol}}</td>
+               <td>{{pic.camera.name}}</td>
+               <td>{{pic.camera.rover_id}}</td>
+               <td>{{pic.rover.name}}</td>
+               <td>{{pic.earth_date}}</td>
+               <td><button class="btn btn-warning btn-sm p-1 m-1"><i
+                class="fas fa-trash-alt text-danger" (click)="deletePhoto(pic)"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+</div> !
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 text-dark">
+  <div class="col" *ngFor="let pic of adminPics paginate: { itemsPerPage: 30, currentPage: p };let ind=index"> 
+    <!--  -->
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 text-dark">
+    <div class="col" *ngFor="let pic of adminPics">
+      <div class="card text-center p-3 m-3">
+          <img src="{{pic.img_src}}" class="card-img-top w-100" alt="...">
+          <h5 class="fw-bold">PHOTO ID : {{pic.id}}</h5>
+          <h5 class="fw-bold">SOL : {{pic.sol}}</h5>
+          <h5 class="fw-bold">EARTH DATE : {{pic.earth_date}}</h5>
+           <h5 class="fw-bold">CAMERA NAME: {{pic.camera.name}}</h5>
+           <h5 class="fw-bold">ROVER ID : {{pic.camera.rover_id}}</h5>
+           <button class="btn btn-warning btn-sm p-1 m-1"><i
+            class="fas fa-trash-alt text-danger" (click)="deletePhoto(pic)"></i></button>     
+            </div>
+            </div>
+            </div>
+        <!--</div>
+          <!-- <button class="btn btn-warning d-block mx-auto" (click)="getDetailedPhotosData(photos.id)"> Get Photo Camera Details!!</button> -->
+      <!--</div>
+<!---<div class="text-center bg-white">
+<pagination-controls (pageChange)="p=$event"></pagination-controls>
+</div>-->

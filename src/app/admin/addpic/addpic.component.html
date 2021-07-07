@@ -1,0 +1,39 @@
+<div class="row mt-5">
+    <div class="col-sm-2 col-md-3"></div>
+    <div class="col-sm-8 col-md-6">
+      <form (ngSubmit)="onSubmitNewPhoto()">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="pt" placeholder="name@example.com" name="productTitle"
+            [(ngModel)]="photoModel.sol">
+          <label for="pt">SOL</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="pi" placeholder="text" name="productImage"
+            [(ngModel)]="photoModel.cameraName">
+          <label for="pi">CAMERA NAME</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="pd" placeholder="text" name="description"
+            [(ngModel)]="photoModel.img_src">
+          <label for="pd">IMAGE URL</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="pi" placeholder="text" name="productImage"
+            [(ngModel)]="photoModel.roverId">
+          <label for="pi">ROVER ID</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="pi" placeholder="text" name="productImage"
+            [(ngModel)]="photoModel.roverName">
+          <label for="pi">ROVER NAME</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="pi" placeholder="text" name="productImage"
+            [(ngModel)]="photoModel.earth_date">
+          <label for="pi">EARTH DATE</label>
+        </div>
+        <button class="btn btn-warning float-end" type="submit">Add Camera</button>
+      </form>
+    </div>
+    <div class="col-sm-2 col-md-3"></div>
+  </div>

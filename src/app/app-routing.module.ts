@@ -7,7 +7,7 @@ import { ContactusComponent } from './contactus/contactus.component'
 import { RoversComponent } from './rovers/rovers.component';
 import { CamerasComponent } from './cameras/cameras.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-
+import { LoginComponent } from './login/login.component';
 const routes: Routes = [
   { path:'home',component:HomeComponent },
   { path:'about',component:AboutComponent},
@@ -15,7 +15,9 @@ const routes: Routes = [
   { path:'cameras/:id',component:CamerasComponent},
   { path:'photos/:id',component:PhotosComponent},
   { path:'contactus',component:ContactusComponent},
+  { path:'login',component:LoginComponent},
   { path:'', redirectTo:'/about',pathMatch:'full'},
+  { path: 'admin', loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule) },
   { path:'**',component:PagenotfoundComponent}
 ];
 

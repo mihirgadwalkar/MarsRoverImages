@@ -15,6 +15,7 @@ import { SearchfilterPipe } from './searchfilter.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     CamerasComponent,
     SearchfilterPipe,
     PagenotfoundComponent,
-    
+    LoginComponent,
   
   ],
   imports: [
