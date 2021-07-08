@@ -1,5 +1,11 @@
-<a routerLink="viewpics">View Photos</a>
-<a routerLink="addpics">Add Photos</a>
+<ul class="nav nav-tabs justify-content-evenly">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="viewpics" routerLinkActive="active">View Photos</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="addpic" routerLinkActive="active">Add Photo</a>
+    </li>
+</ul>
 
 <div>
     <router-outlet></router-outlet>

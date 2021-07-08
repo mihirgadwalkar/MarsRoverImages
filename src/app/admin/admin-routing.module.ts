@@ -11,15 +11,15 @@ import { AddpicComponent } from './addpic/addpic.component';
 const routes: Routes = [{ path: '', component: AdminComponent ,children:[
   {path:'getcam',component:GetcameraComponent,
      children:[
-             {path:'viewrovers',component:ViewroverComponent},
-             {path:'addrovers',component:AddroverComponent},
-             {path:'',redirectTo:"viewrovers",pathMatch:"full"}
+             {path:'viewcameras',component:ViewroverComponent},
+             {path:'addcamera',component:AddroverComponent},
+             {path:'',redirectTo:"viewcameras",pathMatch:"full"}
               ]
             },
   {path:'getpic',component:GetpicComponent,
      children:[
              {path:'viewpics',component:ViewpicComponent},
-             {path:'addpics',component:AddpicComponent},
+             {path:'addpic',component:AddpicComponent},
              {path:'',redirectTo:'viewpics',pathMatch:"full"}
      ]}
 ]}];
