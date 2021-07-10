@@ -16,6 +16,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { LoginComponent } from './login/login.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { LoginComponent } from './login/login.component';
     SearchfilterPipe,
     PagenotfoundComponent,
     LoginComponent,
+    RatingComponent,
   
   ],
   imports: [
@@ -39,7 +42,8 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,17 @@
+<div class="container bg-white m-5">
+<div class="form-group">
+  <ngb-rating [formControl]="ctrl"></ngb-rating>
+  <div class="form-text">
+    <div *ngIf="ctrl.valid" class="text-success">Thankyou for your feedback!</div>
+    <div *ngIf="ctrl.invalid" class="text-danger">Please Rate Us</div>
+  </div>
+</div>
+
+<hr>
+<pre>Your Rating: <b>{{ctrl.value}}/10</b></pre>
+<button class="btn btn-sm btn-outline-{{ ctrl.disabled ? 'danger' : 'success'}} mr-2" (click)="toggle()">
+  {{ ctrl.disabled ? "Enable Rating" : "Disable Rating" }}
+</button>
+<button class="btn btn-sm btn-outline-primary mr-2" (click)="ctrl.setValue(null)">Clear</button>
+<hr>
+</div>
