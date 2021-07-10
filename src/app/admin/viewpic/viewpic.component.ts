@@ -11,7 +11,10 @@ import { Rover } from 'src/app/models/rover.model';
 export class ViewpicComponent implements OnInit {
   mySubscription:Subscription;
   myPosts:[]=[];
-  adminPics
+  adminPics;
+  searchTerm:any;
+  term:any;
+  p=1;
   constructor(private csObj:ConsumeService,private router:Router) { }
 
   ngOnInit(): void {this.mySubscription= this.csObj.getPhotosData().subscribe(

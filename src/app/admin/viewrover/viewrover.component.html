@@ -1,25 +1,14 @@
-<div class="bg-dark">
-    <table class="table text-info text-center">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>ROVER NAME</th>
-                <th>FULL NAME</th>
-                <th></th>
-            </tr>
-        </thead>
-    
-        <tbody>
-            <tr *ngFor="let cam of adminCameras">
-                <td>
-               <button class="btn btn-sm btn-danger"> {{cam.id}}</button></td>
-               <td>{{cam.name}}</td>
-               <td>{{cam.rover_name}}</td>
-               <td>{{cam.full_name}}</td>
-               <td><button class="btn btn-warning btn-sm p-1 m-1"><i
-                class="fas fa-trash-alt text-danger" (click)="deleteCamera(cam)"></i></button></td>
-            </tr>
-        </tbody>
-    </table>
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-1 text-dark">
+    <div class="col" *ngFor="let cam of adminCameras">
+        <div class="card text-center p-3 m-3">
+            <h5 class="fw-bold">CAM ID : {{cam.id}}</h5>
+            <h5 class="fw-bold">CAMERA : {{cam.name}}</h5>
+            <h5 class="fw-bold">ROVER NAME : {{cam.rover_name}}</h5>
+            <h5 class="fw-bold">CAMERA FULL NAME : {{cam.full_name}}</h5>
+            <button class="btn btn-warning btn-sm p-1 m-1">
+                <i class="fas fa-trash-alt text-danger" (click)="deleteCamera(cam)"></i>
+            </button>     
+        </div>
+    </div>
 </div>
+       

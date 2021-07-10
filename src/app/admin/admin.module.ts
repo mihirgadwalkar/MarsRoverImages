@@ -12,6 +12,7 @@ import { Router, RouterModule } from '@angular/router';
 import { GetpicComponent } from './getpic/getpic.component';
 import { ViewpicComponent } from './viewpic/viewpic.component';
 import { AddpicComponent } from './addpic/addpic.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AddpicComponent } from './addpic/addpic.component';
     CommonModule,
     AdminRoutingModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    NgxPaginationModule
   ]
 })
 export class AdminModule { }
