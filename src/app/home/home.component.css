@@ -1,5 +1,171 @@
 .card{
   border: black;
-  background-color: rgb(238, 231, 231);
+  background-color: rgb(236, 228, 221);
   font-family: 'Raleway', sans-serif;
+  
+}
+
+.carousel-caption{
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif;
+}
+.img-fluid{
+
+  max-width:100%;
+  height:auto
+}
+.wrapper{
+display: flex;
+align-items: center;
+justify-content: center;
+height: 50vh;
+}
+.wrapper .card{
+display: flex;
+align-items: center;
+padding: 20px;
+opacity: 0;
+pointer-events: none;
+position: absolute;
+justify-content: space-between;
+border-radius: 100px 20px 20px 100px;
+animation: animate 15s linear infinite;
+animation-delay: calc(3s * var(--delay));
+}
+.wrapper:hover .card{
+animation-play-state: paused;
+}
+.wrapper .card:last-child{
+animation-delay: calc(3s * var(--delay));
+}
+@keyframes animate {
+0%{
+  opacity: 0;
+  transform: translateY(100%) scale(0.5);
+}
+5%, 20%{
+  opacity: 0.4;
+  transform: translateY(100%) scale(0.7);
+}
+25%, 40%{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0%) scale(1);
+}
+45%, 60%{
+  opacity: 0.4;
+  transform: translateY(-100%) scale(0.7);
+}
+65%, 100%{
+  opacity: 0;
+  transform: translateY(-100%) scale(0.5);
+}
+}
+.card .content{
+display: flex;
+align-items: center;
+}
+.wrapper .card .img{
+position: absolute;
+left:5px;
+background: #fff;
+border-radius: 50%;
+padding: 5px;
+box-shadow: 0px 0px 5px rgba(0,0,0,0,2);
+}
+.card .img img{
+border-radius: 50%;
+object-fit: cover;
+}
+.card .details{
+margin-left: 90px;
+}
+.details span{
+font-weight: 600;
+font-size: 18px;
+}
+
+/*@media screen and (max-width:768px) {
+
+.container-fluid{
+    max-width:100%;
+    width: 100%;
+}
+.col-md-3{
+    width:100%;
+    float:left;
+    margin:0;
+}
+}*/
+/*.card1{
+width:100%;
+height: 195px;
+}
+.card1 .card-body p{
+font-size: 20px;
+}*/
+@media screen and (max-width:1295px){
+.card1 img{
+  width: 100%;
+  height: auto;
+}
+.card1 .card-body p{
+  font-size: 18px;
+}
+}
+@media screen and (max-width:1199px){
+.card1 img{
+  width: 100%;
+  height: auto;
+}
+.card1 .card-body p{
+  font-size: 18px;
+  margin-top: 5px;
+}
+}
+@media screen and (max-width:990px){
+.card1 img{
+  width: 100%;
+  height: auto;
+}
+.card1 {
+  margin-top: 15px;
+}
+}
+
+@media screen and (max-width:1295px){
+  .card2 img{
+    width: 100%;
+    height: 280px;
+  }
+  .card1 .card-body p{
+    
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width:1300px){
+  .card3 img{
+    width: 100%;
+    height:280px;
+  }
+  
+}
+@media screen and (max-width:1200px){
+  .card3 img{
+    width: 100%;
+    height:250px;
+  }
+  
+}
+@media screen  and (max-width:780px){
+  .carousel1 .carousel-inner .carousel-item  img{
+       width:100%;
+       height: 300px;
+  }
+  
+  .carousel1 .carousel-indicators  .carousel-inner .carousel-item .carousel-caption p{
+    font-size: 20px;
+
+  }
 }

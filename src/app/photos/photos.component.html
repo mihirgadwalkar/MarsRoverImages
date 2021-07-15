@@ -1,5 +1,7 @@
-
-  <input type="text" name="camname" [(ngModel)]="searchTerm" class="form-control mt-2" placeholder="Search by Camera Name" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap');
+</style>
+<input type="text" name="camname" [(ngModel)]="searchTerm" class="form-control mt-2" placeholder="Search by Camera Name" />
   <input type="text" class="form-control mt-2" placeholder="Search Here for anything" [(ngModel)]="term">
 
  
@@ -7,23 +9,23 @@
     <div class="col" *ngFor="let photos of imglist.photos | filter:term | searchfilter:searchTerm | paginate: { itemsPerPage: 30, currentPage: p };let ind=index"> 
       <!--  -->
         <div class="card text-center p-3 m-3">
-            <img src="{{photos.img_src}}" class="card-img-top w-100" alt="...">
-            <h5 class="fw-bold">PHOTO ID : {{photos.id}}</h5>
-            <h5 class="fw-bold">SOL : {{photos.sol}}</h5>
-            <h5 class="fw-bold">EARTH DATE : {{photos.earth_date}}</h5>
+            <img src="{{photos.img_src}}" class="card-img-top img-fluid" alt="..." width="100%" height="auto">
+            <h5 class="fw-bold ">PHOTO ID : {{photos.id}}</h5>
+            <h5 class="fw-bold ">SOL : {{photos.sol}}</h5>
+            <h5 class="fw-bold ">EARTH DATE : {{photos.earth_date}}</h5>
             <p>Expand below to know from which Camera the photo was taken.</p>
             <div class="accordion" id="accordionExample">
               <div class="accordion-item" >
                 <h2 class="accordion-header">
-                  <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#acr' + ind">
+                  <button class="accordion-button " type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#acr' + ind">
                     {{photos.camera.name}}
                   </button>
                 </h2>
                 <div [attr.id]="'acr' + ind" class="accordion-collapse collapse " data-bs-parent="#accordionExample">
-                  <div class="accordion-body">
-                    <h4>CAMERA FULL NAME : {{photos.camera.full_name}}</h4>
-                    <h4>CAMERA ID : {{photos.camera.id}}</h4>
-                    <h4>CAMERA ROVER ID : {{photos.camera.rover_id}}</h4>
+                  <div class="accordion-body ">
+                    <h4 class="animate__animated animate__fadeInDown">CAMERA FULL NAME : {{photos.camera.full_name}}</h4>
+                    <h4 class="animate__animated animate__fadeInLeft">CAMERA ID : {{photos.camera.id}}</h4>
+                    <h4 class="animate__animated animate__fadeInRight">CAMERA ROVER ID : {{photos.camera.rover_id}}</h4>
                   </div>
                 </div>
               </div>
@@ -32,6 +34,8 @@
         </div>
     </div>
  </div>
-<div class="text-center bg-white">
-  <pagination-controls (pageChange)="p=$event"></pagination-controls>
+<div class="pagination mb-3">
+  <div>
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+  </div>
 </div>
