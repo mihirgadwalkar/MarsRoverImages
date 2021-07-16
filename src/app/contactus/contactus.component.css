@@ -74,7 +74,7 @@
     padding: 100%;
     width: 200px;
     text-align: center;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
     font-family:'Staatliches', cursive; ;
     overflow: hidden;
@@ -121,4 +121,9 @@
     width: 100%;
     padding: 10px;
     text-align: center;
+}
+label{
+    color: red;
+    font-weight: bolder;
+    font-size: large;
 }
