@@ -36367,6 +36367,12 @@
       "name": "RHAZ",
       "rover_name": "Oppurtunity",
       "full_name": "Rear Hazard Avoidance Camera"
+    },
+    {
+      "id": 50,
+      "name": "FHZZ",
+      "rover_name": "Perseverance",
+      "full_name": "Dummy Camera"
     }
   ],
   "adminPics": [
